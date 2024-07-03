@@ -256,7 +256,7 @@ export default {
   computed: {
     ...mapGetters("project", ["getProjects", "getProject"]),
     getIrameURL() {
-      return `http://${this.project.name}rapiddeploy.fun`;
+      return `https://${this.project.name}.rapiddeploy.fun`;
     },
     getDate() {
       if (this.project) {
@@ -320,7 +320,7 @@ export default {
           this.$nextTick(() => {
             document.querySelector(
               "iframe"
-            ).src = `http://${this.project.name}rapiddeploy.fun`;
+            ).src = `https://${this.project.name}.rapiddeploy.fun`;
           });
           clearInterval(this.timeOutvaraible);
         }
@@ -363,7 +363,7 @@ export default {
       return time + ":  " + log.message;
     },
     getProjectDomain(subDomain) {
-      return `http://${subDomain}rapiddeploy.fun`;
+      return `https://${subDomain}.rapiddeploy.fun`;
     },
     toggleLogs(deploymentId) {
       const deployment = this.project.deployments.find(

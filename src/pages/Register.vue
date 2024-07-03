@@ -91,9 +91,9 @@ export default {
       visible: false,
       formData: {
         firstName: "",
-        lastName: "Siddiqui",
-        email: "siddiquifaizan2480@gmail.com",
-        password: "asd@1234",
+        lastName: "",
+        email: "",
+        password: "",
       },
       emailRules: [
         (value) => !!value || "This field is required",

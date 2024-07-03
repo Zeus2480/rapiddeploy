@@ -166,7 +166,7 @@
                         :href="getProjectDomain(project.name)"
                         target="_blank"
                         @click.stop
-                        >{{ project.name }}rapiddeploy.fun</a
+                        >{{ project.name }}.rapiddeploy.fun</a
                       >
                     </h3>
                   </div>
@@ -242,7 +242,7 @@
               </div>
             </v-col>
           </v-row>
-          <v-row>
+          <v-row v-if="!projects">
             <v-col
               ><div class="tw-w-full tw-h-full tw-mt-10">
                 <div class="tw-flex tw-justify-center tw-items-center">
@@ -354,7 +354,7 @@ export default {
       }
     },
     getProjectDomain(subDomain) {
-      return `http://${subDomain}rapiddeploy.fun`;
+      return `https://${subDomain}.rapiddeploy.fun`;
     },
     removeEnv(env) {
       let index = this.envVarialbles.indexOf(env);
