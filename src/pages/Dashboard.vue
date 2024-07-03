@@ -1,6 +1,7 @@
 <template>
   <main-layout>
     <div class="tw-min-h-[calc(100vh-69px)]">
+      
       <v-dialog v-model="createDialog" width="auto">
         <div
           class="tw-bg-black tw-w-[700px] tw-rounded-lg tw-max-h-[90vh] tw-overflow-y-auto"
@@ -17,6 +18,12 @@
                   :rules="urlRules"
                   variant="outlined"
                 ></v-text-field>
+                <p
+            @click="useGuest"
+            class="  tw-cursor-pointer tw-mb-2  tw-underline tw-underline-offset-4"
+          >
+            Use Sample github url
+          </p>
                 <v-btn
                   @click="addEnv"
                   class="tw-my-4"
@@ -242,7 +249,7 @@
               </div>
             </v-col>
           </v-row>
-          <v-row v-if="!projects">
+          <v-row v-if="projects && projects.length==0">
             <v-col
               ><div class="tw-w-full tw-h-full tw-mt-10">
                 <div class="tw-flex tw-justify-center tw-items-center">
@@ -319,6 +326,9 @@ export default {
       "createNewProject",
       "deleteProject",
     ]),
+    useGuest(){
+      this.githubURL="https://github.com/Zeus2480/sample-frontend-project"
+    },
     getStatus(status) {
       switch (status) {
         case "NOT_STARTED":

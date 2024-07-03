@@ -1,5 +1,6 @@
 <template >
   <div class="tw-w-full tw-h-screen tw-bg-black">
+    <div class="tw-w-full  tw-fixed tw-bottom-0 tw-bg-[#0A0A0A] tw-border-b-2 tw-py-2 tw-text-center tw-border-[#252525]">Made with ❤️ By- Faizan Siddiqui  <a class="tw-underline" href="https://www.linkedin.com/in/faizan-siddiqui-2480/">Linkedin</a></div>
     <div class="tw-flex tw-justify-center tw-items-center tw-w-full tw-h-full">
       <div>
         <div
@@ -41,13 +42,21 @@
               >Login</v-btn
             >
           </v-form>
+          <div class="tw-flex tw-flex-row-reverse tw-mt-4" >
 
-          <p
+            <p
             @click="redirectTo('register')"
             class="tw-text-right tw-my-4 tw-cursor-pointer tw-underline tw-underline-offset-4"
-          >
+            >
             Register instead?
           </p>
+          <p
+            @click="useGuestCred"
+            class="tw-text-right tw-my-4 tw-cursor-pointer tw-mx-4 tw-underline tw-underline-offset-4"
+          >
+            Use Guest credentials
+          </p>
+          </div>
         </div>
       </div>
     </div>
@@ -77,9 +86,13 @@ export default {
   },
   methods: {
     ...mapActions("user", ["login"]),
+    useGuestCred(){
+      this.formData.email = "guest@example.com";
+      this.formData.password = "guest123";
+      this.submitForm();
+    },
     async submitForm() {
       let isValid = await this.$refs.loginForm.validate();
-      console.log(isValid);
       isValid = isValid.valid;
       if (!isValid) return;
       this.isLoading = true;

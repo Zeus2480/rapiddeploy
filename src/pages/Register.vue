@@ -1,5 +1,6 @@
 <template>
   <div class="tw-w-full tw-h-screen tw-bg-black">
+    <div class="tw-w-full  tw-fixed tw-bottom-0 tw-bg-[#0A0A0A] tw-border-b-2 tw-py-2 tw-text-center tw-border-[#252525]">Made with ❤️ By- Faizan Siddiqui  <a class="tw-underline" href="https://www.linkedin.com/in/faizan-siddiqui-2480/">Linkedin</a></div>
     <div class="tw-flex tw-justify-center tw-items-center tw-w-full tw-h-full">
       <div>
         <div
@@ -109,7 +110,8 @@ export default {
   methods: {
     ...mapActions("user", ["register"]),
     async submitForm() {
-      let isValid = await this.$refs.registerForm.validate().valid;
+      let isValid = await this.$refs.registerForm.validate();
+      isValid = isValid.valid;
       if (!isValid) return;
       this.isLoading = true;
       const resp = await this.register(this.formData);
