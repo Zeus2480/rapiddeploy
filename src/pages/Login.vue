@@ -65,8 +65,8 @@ export default {
       isLoading: false,
       visible: false,
       formData: {
-        email: "siddiquifaizan2480@gmail.com",
-        password: "asd@1234",
+        email: "",
+        password: "",
       },
       emailRules: [
         (value) => !!value || "This field is required",
