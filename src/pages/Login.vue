@@ -7,7 +7,7 @@
           class="tw-bg-[#0A0A0A] tw-text-white tw-border tw-p-8 tw-border-[#252525] tw-border[2px] tw-rounded tw-w-[600px]"
         >
           <h3 class="tw-font-bold tw-mb-12 tw-mt-4 tw-text-3xl tw-text-center">
-            Log to Vercel
+            Log to Rapid Deploy
           </h3>
 
           <!-- <v-card subtitle="Subtitle" title="Title"></v-card> -->
